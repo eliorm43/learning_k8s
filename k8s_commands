@@ -1,0 +1,15 @@
+Overview of kubectl commands
+alias k="kubectl"
+
+
+
+k run --generator run-pod/v1 tmp-shell --rm -it --image bretfisher/netshoot -- bash  (create a pod and enter its bash terminates when done)
+k get pods -w (show list of pods in deamon mode)
+k describe pod/httpenv-6bf64f7c4f-z7czb (show a detailed snapshot of pod very much like inspect in docker container)
+k create deployment httpenv --image=bretfisher/httpenv (deploy a image)
+k scale deploy/httpenv --replicas 5 (scale a image)
+k delete pod/my-apache-5d589d69c7-h2qrf (delete a pod)
+k expose deploy/httpenv --port 8888 (expose a port essentialy run a service so other pods inside can access to pod)
+k get service (show cluster ips aka services for the pods)
+k expose deploy/httpenv --port 8888 --name httpenv-np --type Nodeport (expose a port essentialy run a service so other pods inside can access to pod)
+k get namespaces (shows name spaces)
