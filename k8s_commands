@@ -13,3 +13,7 @@ k expose deploy/httpenv --port 8888 (expose a port essentialy run a service so o
 k get service (show cluster ips aka services for the pods)
 k expose deploy/httpenv --port 8888 --name httpenv-np --type Nodeport (expose a port essentialy run a service so other pods inside can access to pod)
 k get namespaces (shows name spaces)
+ 
+ inorder to get a clue how to write a YAML use these commands:
+ k api-resources 
+ k api-versions
